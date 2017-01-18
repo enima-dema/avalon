@@ -44,5 +44,7 @@ public class Main {
 
         //See mission
         System.out.println(g.getBoard());
+
+
     }
 }
