@@ -1,0 +1,14 @@
+CREATE DATABASE AVALON;
+
+USE AVALON;
+
+CREATE TABLE characters (
+	
+);
+
+CREATE TABLE users (
+
+);
+
+
+	
