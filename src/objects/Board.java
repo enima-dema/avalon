@@ -3,8 +3,9 @@ package objects;
 /**
  * Created by Human Booster on 18/01/2017.
  */
-public class Planche {
+public class Board {
     int playerNumber;
+    int qtyBadGuys;
     int firstMission;
     int secondMission;
     int thirdMission;
@@ -12,8 +13,9 @@ public class Planche {
     int fifthMission;
     boolean twoFails;
 
-    public Planche(int playerNumber, int firstMission, int secondMission, int thirdMission, int fourthMission, int fifthMission, boolean twoFails) {
+    public Board(int playerNumber, int qtyBadGuys, int firstMission, int secondMission, int thirdMission, int fourthMission, int fifthMission, boolean twoFails) {
         this.playerNumber = playerNumber;
+        this.qtyBadGuys = qtyBadGuys;
         this.firstMission = firstMission;
         this.secondMission = secondMission;
         this.thirdMission = thirdMission;
@@ -28,6 +30,14 @@ public class Planche {
 
     public void setPlayerNumber(int playerNumber) {
         this.playerNumber = playerNumber;
+    }
+
+    public int getQtyBadGuys() {
+        return qtyBadGuys;
+    }
+
+    public void setQtyBadGuys(int qtyBadGuys) {
+        this.qtyBadGuys = qtyBadGuys;
     }
 
     public int getFirstMission() {
@@ -80,7 +90,7 @@ public class Planche {
 
     @Override
     public String toString() {
-        return "Planche{" +
+        return "Board{" +
                 "playerNumber=" + playerNumber +
                 ", firstMission=" + firstMission +
                 ", secondMission=" + secondMission +
