@@ -4,9 +4,14 @@ import objects.Game;
 import objects.Player;
 import services.GameService;
 import services.PlayerService;
+import services.PowerService;
 import servicesImpl.BoardServiceImpl;
 import servicesImpl.GameServiceImpl;
 import servicesImpl.PlayerServiceImpl;
+import servicesImpl.PowerServiceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Human Booster on 18/01/2017.
@@ -44,6 +49,13 @@ public class Main {
 
         //See mission
         System.out.println(g.getBoard());
+
+        //See who can see who
+        PowerService pows = new PowerServiceImpl();
+        List<Player> pl = pows.getInfo(1);
+        if (!pl.isEmpty()){
+            System.out.println(pl);
+        }
 
 
     }
