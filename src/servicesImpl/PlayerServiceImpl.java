@@ -13,8 +13,20 @@ public class PlayerServiceImpl implements PlayerService {
     //TEST DATA
     List<Player> players = new ArrayList<Player>();
     private static PlayerServiceImpl ps;
+    int counter = 0;
 
     private PlayerServiceImpl() {
+        //FOR TESTING
+        addPlayer(new Player("Amine"));
+        addPlayer(new Player("Samy"));
+        addPlayer(new Player("Adrien"));
+        addPlayer(new Player("Laurence"));
+        addPlayer(new Player("Robin"));
+        /*ps.addPlayer(new Player("Eric"));
+        ps.addPlayer(new Player("Bob"));
+        ps.addPlayer(new Player("Safia"));
+        ps.addPlayer(new Player("Aziz"));
+        ps.addPlayer(new Player("Nicolas"));*/
     }
 
     public static PlayerServiceImpl getInstance() {
@@ -28,6 +40,7 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public boolean addPlayer(Player player) {
         try {
+            player.setId(++counter);
             players.add(player);
             return true;
         } catch (Exception e) {
@@ -54,6 +67,16 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public List<Player> getAllPlayers() {
         return players;
+    }
+
+    @Override
+    public boolean isPlayerValid(String login) {
+        for (Player player : players){
+            if (player.getLogin().equals(login)){
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override

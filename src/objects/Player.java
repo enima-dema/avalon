@@ -6,10 +6,13 @@ package objects;
 public class Player {
     int id;
     String login;
-    int compteur = 0;
 
     public Player(String login) {
-        id = compteur++;
+        this.login = login;
+    }
+
+    public Player(int id, String login) {
+        this.id = id;
         this.login = login;
     }
 

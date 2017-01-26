@@ -16,6 +16,8 @@ public interface PlayerService {
 
     public List<Player> getAllPlayers();
 
+    public boolean isPlayerValid(String login);
+
     public boolean voterDemo(int missionId);
 
     public boolean voterMission();

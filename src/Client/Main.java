@@ -30,19 +30,6 @@ public class Main {
         //Assignation de la board à la game
         g.setBoard(BoardServiceImpl.getBoard());
 
-        //Ajout utilisateur for testing
-        PlayerService ps = PlayerServiceImpl.getInstance();
-        ps.addPlayer(new Player("Amine"));
-        ps.addPlayer(new Player("Samy"));
-        ps.addPlayer(new Player("Adrien"));
-        ps.addPlayer(new Player("Laurence"));
-        ps.addPlayer(new Player("Robin"));
-        ps.addPlayer(new Player("Eric"));
-        ps.addPlayer(new Player("Bob"));
-        ps.addPlayer(new Player("Safia"));
-        ps.addPlayer(new Player("Aziz"));
-        ps.addPlayer(new Player("Nicolas"));
-
         //Dispatch characters
         g.setDistribution(gs.dispatchChar());
         System.out.println(g.getDistribution());
@@ -50,11 +37,22 @@ public class Main {
         //See mission
         System.out.println(g.getBoard());
 
-        //See who can see who
+        //See what sees the good guy
         PowerService pows = new PowerServiceImpl();
         List<Player> pl = pows.getInfo(1);
         if (!pl.isEmpty()){
             System.out.println(pl);
+        }else {
+            System.out.println("Vous ne voyez personne.");
+        }
+
+        //See what sees the bad guy
+        pows = new PowerServiceImpl();
+        pl = pows.getInfo(2);
+        if (!pl.isEmpty()){
+            System.out.println(pl);
+        }else {
+            System.out.println("Vous ne voyez personne.");
         }
 
 
